@@ -10,15 +10,12 @@
 		"dev:server": "cross-env LOG_LEVEL=debug PORT=3100 npm --workspace server run dev",
 		"start": "npm --workspace server start",
 		"test": "npm  --workspace server --workspace client test",
+		"prettier": "prettier --write .",
 		"test:client": "npm --workspace client test",
 		"test:server": "npm --workspace server test",
 		"test:e2e": "npm --workspace e2e test",
 		"test:e2e:ui": "npm --workspace e2e run test:ui",
-		"test:e2e:headed": "npm --workspace e2e run test:headed",
-		"prettier:check": "npm exec prettier -- --check .",
-		"prettier:write": "npm exec prettier -- --write .",
-		"eslint": "npm exec eslint .",
-		"eslint:fix": "npm exec eslint -- --fix ."
+		"test:e2e:headed": "npm --workspace e2e run test:headed"
 	},
 	"author": "Code Your Future <mail@codeyourfuture.io>",
 	"license": "ISC",
@@ -29,7 +26,7 @@
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-jest": "^28.2.0",
-		"eslint-plugin-jest-dom": "^5.4.0",
+		"eslint-plugin-jest-dom": "^5.2.0",
 		"eslint-plugin-jsx-a11y": "^6.8.0",
 		"eslint-plugin-n": "^17.2.1",
 		"eslint-plugin-react": "^7.34.1",
@@ -49,8 +46,6 @@
 		"npm": ">=10"
 	},
 	"dependencies": {
-		"@rollup/rollup-darwin-x64": "^4.16.4",
-		"serverless-http": "^3.2.0",
-		"spawn-command": "^0.0.2"
+		"serverless-http": "^3.2.0"
 	}
 }
