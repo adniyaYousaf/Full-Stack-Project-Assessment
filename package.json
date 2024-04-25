@@ -46,6 +46,7 @@
 		"npm": ">=10"
 	},
 	"dependencies": {
+		"sass": "^1.75.0",
 		"serverless-http": "^3.2.0"
 	}
 }
