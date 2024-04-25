@@ -1,6 +1,9 @@
 DROP TABLE IF EXISTS videos CASCADE;
 
-CREATE TABLE videos (title VARCHAR, src VARCHAR);
+CREATE TABLE videos (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR, 
+    src VARCHAR);
 
 INSERT INTO videos (title,src) VALUES ('Never Gonna Give You Up','https://www.youtube.com/embed/dQw4w9WgXcQ?si=sdvqEritjOTwN2Af');
 INSERT INTO videos (title,src) VALUES ('The Coding Train','https://www.youtube.com/embed/HerCR8bw_GE?si=5Xfqx9K1JMB_QCBh');
