@@ -1,0 +1,11 @@
+.container {
+	margin-top: 2rem;
+	padding-left: 1rem;
+
+	&_video {
+		border-radius: 1rem;
+		border: none;
+		box-shadow: 6px 4px 18px 0 #00000042;
+		margin-top: 0.6rem;
+	}
+}
