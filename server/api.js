@@ -7,8 +7,8 @@ router.get("/videos", async (_, res) => {
 	result
 		? res.send(result.rows)
 		: res
-				.status(500)
-				.send({ success: "false", error: "Could not connect to database" });
+			.status(500)
+			.send({ success: "false", error: "Could not connect to database" });
 });
 
 router.post("/videos", async (req, res) => {
@@ -21,5 +21,17 @@ router.post("/videos", async (req, res) => {
 			: res.send({ error: "Video could not be added" })
 	);
 });
+
+router.delete("/videos/:id", async (req, res) => {
+	const id = req.params.id;
+
+	const deletedVideo = await db.query(
+		`DELETE FROM videos WHERE id='${id}'`
+	);
+
+	deletedVideo
+		? res.status(200).send({ success: "Deleted the video successfully" })
+		: res.status(404).send({ error: "Id for the video does not exist" })
+})
 
 export default router;
