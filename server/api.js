@@ -12,15 +12,20 @@ router.get("/videos", async (_, res) => {
 });
 
 router.post("/videos", async (req, res) => {
-	const newVideo = await db.query(
-		`INSERT INTO videos (title, src) VALUES ('${req.body.title}', '${req.body.src}')`
-	);
-	res.send(
-		newVideo
-			? res.send({ success: "Video added successfully" })
-			: res.send({ error: "Video could not be added" })
-	);
+	try {
+		await db.query(`INSERT INTO videos (title, src) VALUES ($1, $2)`, [req.body.title, req.body.src])
+		res.send({
+			success: true,
+			message: `Video added successfully: ${req.body.title}, ${req.body.src}`
+		});
+	} catch (error) {
+		res.status(500).send({
+			success: false,
+			error: "Video could not be added"
+		});
+	}
 });
+
 
 router.delete("/videos/:id", async (req, res) => {
 	const id = req.params.id;
