@@ -1,8 +1,56 @@
+@font-face {
+	src: url("../font/Play-Regular.ttf");
+	font-family: "play";
+	font-weight: 400;
+}
 
-.container-box{
-    display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 1rem;
+body {
+	font-family: "play";
+}
+.sort {
+	display: flex;
 	justify-content: center;
 	align-items: center;
+	height: 3rem;
+	gap: 1rem;
+	&_btn {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 2rem;
+		width: 2rem;
+		font-size: 1.2rem;
+		color: rgb(0, 0, 0);
+		background-color: white;
+		border-radius: 0.1rem;
+		background-color: rgba(99, 30, 30, 0.547);
+		border: none;
+		
+		&_hover {
+			border: 2px solid brown;
+		}
+	}
+}
+.container-box {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+	justify-items: center;
+	align-content: center;
+	padding-block: 3rem;
+	color: black;
+}
+.form-box {
+	display: flex;
+	width: 100%;
+	&_heading {
+		width: 30%;
+		display: flex;
+		align-items: center;
+		background-color: black;
+		color: white;
+		font-weight: 800;
+		font-size: 1.5rem;
+	}
 }

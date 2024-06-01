@@ -5,13 +5,94 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	max-width: 25rem;
-	height: 15rem;
-
+	width: 80%;
+	height: 24rem;
+	gap: 1rem;
+	border-bottom: 1px solid black;
 	&_video {
-		border-radius: 1rem;
 		border: none;
-		box-shadow: 6px 4px 18px 0 #00000042;
 		margin-top: 0.6rem;
+		height: 60%;
+		width: 100%;
+	}
+	&_title {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+		&_rating {
+			display: flex;
+			gap: 1rem;
+		}
+	}
+	&_btns {
+		position: relative;
+		display: flex;
+		width: 100%;
+		justify-content: right;
+		gap: 1rem;
+		&_delbtn {
+			--border: 5px; /* the border width */
+			--slant: 0.7em; /* control the slanted corners */
+			--color: #0f0d0dc6; /* the color */
+			padding: 0.4rem 1.2rem;
+			border: none;
+			cursor: pointer;
+			font-weight: bold;
+			color: var(--color);
+			background:
+				linear-gradient(to bottom left, var(--color) 50%, #0000 50.1%) top right,
+				linear-gradient(to top right, var(--color) 50%, #0000 50.1%) bottom left;
+			background-size: calc(var(--slant) + 1.3 * var(--border))
+				calc(var(--slant) + 1.3 * var(--border));
+			background-repeat: no-repeat;
+			box-shadow:
+				0 0 0 200px inset var(--s, #0000),
+				0 0 0 var(--border) inset var(--color);
+			clip-path: polygon(
+				0 0,
+				calc(100% - var(--slant)) 0,
+				100% var(--slant),
+				100% 100%,
+				var(--slant) 100%,
+				0 calc(100% - var(--slant))
+			);
+			transition:
+				color var(--t, 0.3s),
+				background-size 0.3s;
+			&:hover {
+				background-size: 100% 100%;
+				color: #fff;
+				--t: 0.2s 0.1s;
+			}
+		}
+		&_time {
+			position: absolute;
+			top: 0;
+			left: 0;
+			
+		}
+		&_thumb-box {
+			display: flex;
+			gap: 2rem;
+			justify-content: center;
+			align-items: center;
+			padding: 0.7rem 1rem;
+			border-radius: 2rem;
+			background-color: #86797727;
+
+			&_thumb {
+				cursor: pointer;
+				color: #000000c0;
+				transition: 1s ease;
+				transform: scale(1.1);
+				&:hover,
+				&:active {
+					color: #b36859;
+					transform: scale(1.2);
+				}
+			}
+		}
 	}
 }
